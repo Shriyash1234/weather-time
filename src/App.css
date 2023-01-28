@@ -1,38 +1,177 @@
-.App {
-  text-align: center;
+
+body{
+    background-image: url('Images/rain2.jpg');
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	width: 100vw;
+	left:0px;
+}
+/* FirstDiv Css start*/
+.container1{
+    display: flex;
+    flex-direction: row;
+}
+.FirstDiv{
+    width:60vw;
+}
+h1{
+    color: white;
+    display: inline !important;
+}
+.tempCity{
+    display: flex;
+    padding-top: 62vh;
+    padding-left: 8vw;
+}
+.temp{
+    color: white;
+    font-size: 9vw;
+    font-weight: 400;
+}
+.city{
+    margin-top: 3.5vw;
+    color: white;
+    font-size: 4.2vw;
+    height:40%;
+}
+.time{
+    font-size: 1.5vw;
+    color: white;
+}
+.city-time{
+    padding-left: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+.weather-icon{
+    padding-top: 10vh;
+    padding-left: 4vw;
+    height: 9vw;
+    width:8vw;
+}
+.weather-desc{
+    color: white;
+    font-size: 1.5vw;
+    padding-left: 4vw;
+}
+.emoji-desc{
+    display: flex;
+    flex-direction: column;
+}
+/* FirstDiv CSS complete */
+
+
+
+/* SideDiv searchbox CSS start */
+.sideDiv{
+    height: 100vh;
+    width:40vw;
+    backdrop-filter: blur(15px);
+}
+#searchbox{
+    border-top: none;
+    border-left:none ;
+    border-right: none;
+    border-bottom: 1px solid white;
+    margin-left: 3vw;
+    padding-top: 7vh;
+    width:70%;
+    color: white;
+    background: none;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+    font-size: 1.5vw;
+    opacity: 0.5;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+   font-size: 1.5vw;
+   opacity: 0.5;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+   font-size: 1.5vw;
+   opacity: 0.5;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+   font-size: 1.5vw;
+   opacity: 0.5;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    white;
+   font-size: 1.5vw;
+   opacity: 0.5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::placeholder { /* Most modern browsers support this now. */
+   color:    white;
+   font-size: 1.5vw;
+   opacity: 0.5;
 }
+.searchbar{
+    display: flex;
+    flex-direction: column;
+}
+.search-icon{
+    height: 5vw;
+    width: 5vw;
+    right: 0;
+    position: absolute;
+    background-image: url(Images/search.png);
+    background-repeat: no-repeat;
+	/* background-size: cover; */
+	background-position: center;
+    background-color: aquamarine;
+    margin-left: 4vw;
+    padding: 0.5vw 1vw 0.5vw 1vw;
+}
+/* SideDiv searchbox CSS complete */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* locations CSS start */
+.locations{
+    height:40vh;
 }
+/* locations CSS start */
 
-.App-link {
-  color: #61dafb;
+/* Weather-deatils CSS start */
+.weather-details{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-info{
+    margin-top: 3vh;
+    color: white;
+    font-size: 1.8vw;
 }
+ul{
+    width:50%;
+    padding-top: 2vh;
+    padding-left: 0px;
+    list-style-type: none;
+    padding-bottom: 1vh;
+}
+li{
+    padding-top: 3.2vh;
+    color: white;
+    opacity: 0.5;
+    font-size: 1.3vw;
+}
+.ul-li{
+    display: flex;
+    flex-direction: row;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+/* Weather-deatils CSS complete */
