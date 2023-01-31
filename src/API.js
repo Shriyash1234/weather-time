@@ -78,7 +78,7 @@ function API() {
 
   // set the state variables
   const [value, setValue] = useState(data);   //for storing the dat
-  const [place,setPlace] = useState('pune');  //for storing the place will chnage depending on the input from user
+  const [place,setPlace] = useState('satara');  //for storing the place will chnage depending on the input from user
 
   //APIs intials for calculating weather and time
   const timeString = "https://api.ipgeolocation.io/timezone?apiKey=c7719cfa65c047c58a62e06b8e544019&tz&location="
@@ -120,4 +120,7 @@ function API() {
   );
   }
 export default API;
-      
+
+//Problem-The place was not getting updated.Sometimes getting upated but to its previous value
+//Mistakes- Was using useeffect two times and also the second usEffect was not checking any variable.
+//Ans- Added the second parameter to useEffect(place). Kept only one useEffect. 
