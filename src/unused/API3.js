@@ -1,6 +1,7 @@
 
 import './App.css';
-import Sidebar2 from './sidebar'
+import Sidebar from '../sidebar'
+import Sidebar2 from '../sidebar2'
 import React, { useState, useEffect } from "react";
 const time = {
     "geo": {
@@ -75,49 +76,77 @@ const weather =
   }
 const data = [time,weather]    
 function API() { 
+  const [value, setValue] = useState(data);
+  const [place,setPlace] = useState('pune');
+  // const user = {
+  //   name: "John Doe",
+  //   city: "satara",
+  //   outCity: outCity
+  // };
 
-  // set the state variables
-  const [value, setValue] = useState(data);   //for storing the dat
-  const [place,setPlace] = useState('pune');  //for storing the place will chnage depending on the input from user
-
-  //APIs intials for calculating weather and time
   const timeString = "https://api.ipgeolocation.io/timezone?apiKey=c7719cfa65c047c58a62e06b8e544019&tz&location="
   const weatherStringIntial  = "https://api.openweathermap.org/data/2.5/weather?q="
   const weatherStringFinal = "&appid=d4316daf02386ff456d22c31deb79439"
+  
 
-  //will be pass as prop to the sidebar by which we will set the place to the message we got from user
-  const outputCity= (message)=>{
+  // function outCity(message) {
+  //   console.log(message)
+  //   setPlace(message)
+  //   // setTimeout(()=>{setPlace(message);},5000)
+  //   console.log(place)
+  // }
+  // useEffect(() => {
+  //   outputCity();
+  // },[])
+
+  
+   const outputCity= (message)=>{
+    console.log(message)
     setPlace(message)
-  };
+    // setTimeout(()=>{setPlace(message);},5000)
+    console.log(place)
+    // this.forceUpdate();
+    
+    // user.outCity(message)
 
-  //API for the specific place
+    // console.log(user.city)
+  };
+  // useEffect(() => { outputCity() }, [place])
+  
   const timeAPI = timeString + place
   const weatherAPI = weatherStringIntial + place + weatherStringFinal
-
-  //For fetching the data from the APIs. By using promise.all we can ensure that it will calculate the value only after all promise have been ensured.
   const fetchData = async () => {await Promise.all([fetch(timeAPI).then((response) => response.json()),fetch(weatherAPI).then((response) => response.json())])
-  .then((value) => {
-      setValue(value) // setting the value
-      })
-      .catch((err) => {
-          console.log(err);
-      });
-  } 
 
-  //It will check if the place variable have been changed at every render
-  useEffect(() => {
-    fetchData();
-  },[place])
+      .then((value) => {
+          // console.log(value[0].time_12)
+          setValue(value)
+          // console.log(city)
+          })
+          .catch((err) => {
+              console.log(err);
+          });
+    } 
 
-  return (
-    <div>
-    <Sidebar2
-        time = {value[0]}  //passing time data
-        weather = {value[1]} //passing weather data
-        outputCity = {outputCity} //passing afunction as prop
-    />
-    </div>
-  );
+    
+    useEffect(() => {
+      fetchData();
+    },[place])
+
+  //   if (city) {
+  //     fetchData();
+  //   }
+  // };
+
+    return (
+      <div>
+      <Sidebar2
+          time = {value[0]}
+          weather = {value[1]}
+          outputCity = {outputCity}
+      />
+      </div>
+      
+    );
   }
 export default API;
       

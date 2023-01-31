@@ -1,9 +1,13 @@
 import React from 'react'
 function SideDiv(props){
+    const onTrigger = (event) => {
+        event.preventDefault();
+        props.parentCallback(event.target.city.value);
+    }
     return <div>
         <div className="sideDiv">
             <div className='searchbar'>
-                <form action="/"  method="post">
+                <form action="/"  method="post" onSubmit = {onTrigger}>
                     <input type="text" name="city" id="searchbox" placeholder="Another location" autoComplete='off'></input>
                     <button class="search-icon"></button>
                     {/* <img  src={require('./Images/search.png')}/> */}
