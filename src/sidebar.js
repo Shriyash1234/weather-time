@@ -22,6 +22,8 @@ class Sidebar extends React.Component{
                 humidity = {this.props.weather.main.humidity}
                 temperature =  {this.props.weather.main.temp}
                 clouds = {this.props.weather.clouds.all}
+                icon = {this.props.weather.weather[0].icon}
+                id = {this.props.weather.weather[0].id}
             />
             <SideDiv
                 city = {this.props.time.geo.city}

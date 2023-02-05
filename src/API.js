@@ -1,6 +1,6 @@
 
 import './App.css';
-import Sidebar2 from './sidebar'
+import Sidebar from './sidebar'
 import React, { useState, useEffect } from "react";
 const time = {
     "geo": {
@@ -111,7 +111,7 @@ function API() {
 
   return (
     <div>
-    <Sidebar2
+    <Sidebar
         time = {value[0]}  //passing time data
         weather = {value[1]} //passing weather data
         outputCity = {outputCity} //passing afunction as prop
