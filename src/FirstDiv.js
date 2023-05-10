@@ -40,10 +40,10 @@ function FirstDiv(props){
         else if(id===802){//Scattered
             document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1642447733831-2cdd9f5efae7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1888&q=80)'
         }
-        else if(id == 803){//broken
+        else if(id === 803){//broken
             document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1429734956993-8a9b0555e122?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1808&q=80)'
         }
-        else if(id == 804){//overcast
+        else if(id === 804){//overcast
             document.body.style.backgroundImage = 'url(https://images.unsplash.com/photo-1471673191832-eec29aa4b233?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1781&q=80)'
         }
         else{
